@@ -3,7 +3,7 @@
 """
 Created on Mon Sep  2 12:27:33 2019
 
-@author: viniciusreis
+@author: viniciusreis .
 """
 ######################Importando Bibliotecas##################
 import requests
