@@ -9,7 +9,7 @@ Created on Tue Aug 20 15:09:43 2019
 import requests
 import json
 import urllib3
-#from requests.packages.urllib3.exceptions import InsecureRequestWarning
+from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 # urllib3.disable_warnings()
 #################################################
