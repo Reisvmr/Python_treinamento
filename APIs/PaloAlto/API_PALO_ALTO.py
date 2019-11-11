@@ -4,6 +4,10 @@
 Created on Tue Aug 20 15:09:43 2019
 
 @author: viniciusreis
+PRE-RECs
+pip install requests
+pip install simplejson
+pip install urllib3
 """
 #######Importando Bibliotecas##################
 import requests
