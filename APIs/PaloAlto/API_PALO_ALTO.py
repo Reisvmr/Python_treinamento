@@ -30,8 +30,11 @@ response = requests.get(categoriaurl, params=payload, verify=False)
 #############Inicio do Codigo####################
 #print (r.text) 
 #print (r.url)
+#data = response.json()
+#json_data = json.loads(response.text) # convertendo para json
 print (response.status_code) # To print response bytes 
 print(response.text) # To print unicode response string 
+response.json()
 
 """
 #Validadando a conexao ApI
