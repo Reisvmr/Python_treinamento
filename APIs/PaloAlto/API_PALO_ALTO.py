@@ -7,7 +7,11 @@ Created on Tue Aug 20 15:09:43 2019
 """
 #######Importando Bibliotecas##################
 import requests
+import json
 import urllib3
+#from requests.packages.urllib3.exceptions import InsecureRequestWarning
+requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
+# urllib3.disable_warnings()
 #################################################
 ###########          Metodo Post       ########## 
 ############ Declarando as Variaveis ############
@@ -20,9 +24,20 @@ payload = { 'key' : chave}
 
 
 #print(response.get_text())
-r = requests.get(categoriaurl, params=payload, verify=False)
+response = requests.get(categoriaurl, params=payload, verify=False)
 
 #################################################
 #############Inicio do Codigo####################
-print (r.text)
+#print (r.text) 
 #print (r.url)
+print (response.status_code) # To print response bytes 
+print(response.text) # To print unicode response string 
+
+"""
+#Validadando a conexao ApI
+if response.status_code == 200:
+    print('Success!')
+elif response.status_code == 404:
+    print('Not Found.')
+"""
+
