@@ -1,5 +1,3 @@
-#!/usr/bin/env python2
-
 """
 Created on Tue Aug 20 15:09:43 2019
 
@@ -12,6 +10,7 @@ pip install urllib3
 import requests
 import json
 import urllib3
+import xmltodict
 from requests.packages.urllib3.exceptions import InsecureRequestWarning
 requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 # urllib3.disable_warnings()
@@ -26,24 +25,11 @@ categoriaurl = 'https://10.32.208.101/api/?type=report&async=yes&reporttype=pred
 payload = { 'key' : chave}
 
 
-#print(response.get_text())
+#Carregando xml para a variavel response
 response = requests.get(categoriaurl, params=payload, verify=False)
-
-#################################################
-#############Inicio do Codigo####################
-#print (r.text) 
-#print (r.url)
-#data = response.json()
-#json_data = json.loads(response.text) # convertendo para json
-print (response.status_code) # To print response bytes 
-print(response.text) # To print unicode response string 
-response.json()
-
-"""
-#Validadando a conexao ApI
-if response.status_code == 200:
-    print('Success!')
-elif response.status_code == 404:
-    print('Not Found.')
-"""
-
+#Converter resultado xml to dict
+xpars = xmltodict.parse(response.text)
+#Converter resultado para json
+json = json.dumps(xpars)
+#Imprimindo resultado
+print (json)
