@@ -42,7 +42,7 @@ vpn_user = { 'type': type ,'cmd': vpn_user, 'key': chave}
 #Converter resultado para json
 #json = json.dumps(dados)
 ###TESTE FUNCAO
-def VPN_DISCOVERY():
+def VPN_DISCOVERY_LOGON():
     r = response = requests.get(url, params=vpn_user, verify=False)
     dados = xmltodict.parse(response.text)
     lista = dados['response']['result']['entry']
@@ -54,12 +54,12 @@ def VPN_DISCOVERY():
                     '{#DOMAIN}': i['domain'],
                     '{#USERNAME}': i['username'],
                     '{#COMPUTER}': i['computer'],
-                    '{#COMPUTER}': i['client'],
-                    '{#VIRTUAL_IP}': i['virtual-ip'],
+                    '{#CLIENT}': i['client'],
+                    '{#LOCAL_IP}': i['virtual-ip'],
                     '{#PUBLIC_IP}': i['public-ip'],
                     '{#LOGIN_TIME_UTC}': i['login-time-utc']
                 }
                 result_json.append(lista)
     return json.dumps({'data': result_json}, indent=4)
 #
-print(VPN_DISCOVERY())
+print(VPN_DISCOVERY_LOGON())
