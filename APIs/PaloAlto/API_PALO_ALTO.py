@@ -38,4 +38,6 @@ xpars = xmltodict.parse(response.text)
 #Converter resultado para json
 json = json.dumps(xpars)
 #Imprimindo resultado
-print (json)
+print (json, indent=4))
+#Imprimindo dict
+#print (xpars)
