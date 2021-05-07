@@ -22,14 +22,17 @@ requests.packages.urllib3.disable_warnings(InsecureRequestWarning)
 ############ Declarando as Variaveis ############
 
 chave = 'LUFRPT1idTV0YWlYbHd5ekozRjNOeE1kVnBHbC9lNUE9eTlGWXNncjJSekRpWE1MZ3hHcDVZYkhka3R5ZmoxSjZDV2RHTWxtOWtTUT0='
-categoriaurl = 'https://10.32.208.101/api/?type=report&async=yes&reporttype=predefined&reportname=top-url-categories&'
+url = 'https://10.32.208.101/api/'
+type = 'op'
+cmd = '<show><global-protect-gateway><current-user></current-user></global-protect-gateway></show>'
+
 #Payload contem todos os parametros que seram utilizados no post em forma de dicionario
 
-payload = { 'key' : chave}
+payload = { 'type': type ,'cmd': cmd, 'key': chave}
 
 
 #Carregando xml para a variavel response
-response = requests.get(categoriaurl, params=payload, verify=False)
+response = requests.get(url, params=payload, verify=False)
 #Converter resultado xml to dict
 xpars = xmltodict.parse(response.text)
 #Converter resultado para json
