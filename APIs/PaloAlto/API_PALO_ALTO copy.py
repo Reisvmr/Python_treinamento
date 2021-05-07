@@ -61,19 +61,5 @@ def VPN_DISCOVERY():
                 }
                 result_json.append(lista)
     return json.dumps({'data': result_json}, indent=4)
-#Imprimindo resultado
-#print (json)
-#Imprimindo dict
-#print (xpars)
-#Imprime xml
-#print (lista)
-
-################
-# Discovery Licenses Operations
-#def vpn_user_logon():
-#    r = requests.get(url, params=vpn_user, verify=False)
-#    dados = dict(xmltodict.parse(r.text))
-#    lista = dados['response']['result']['entry']
-#    result_json = []
 #
 print(VPN_DISCOVERY())
