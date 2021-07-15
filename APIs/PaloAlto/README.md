@@ -120,30 +120,4 @@ UserParameter=VPN_DISCOVERY_LOGOUT,/etc/zabbix/scripts/GLOBAL_PROTECT.py VPN_DIS
             "{#RESPOSTA}": "client logout"
         }
 
-# zabbix_get -s < IP Agent Zabbix > -k graylog.cluster.status['2c0b3a0d-d8ff-4b20-ba8d-0e8330f0ab2e',lb_status]
-alive
 ```
-
-7. Import proper version of template to Zabbix Server:
-- Zabbix Server 3.4, 4.x - zabbix_3.4_template_graylog-node.xml
-- Zabbix Server 5.x - zabbix_5.0_template_graylog-node.xml
-
-# Screenshots
-
-## Grafana:
-
-![grafana-layout]( screenshot/grafana-screenshot.png)
-
-## Zabbix Latest Data
-
-![zabbix-latest](screenshot/zabbix-latest.png)
-
-
-#### Reference
-Fonte: https://www.graylog.org/post/back-to-basics-monitoring-graylog
-
-Blog Onx Solutions: http://blog.onxsolutions.net/monitorando-node-graylog-usando-zabbix/
-
-MarketPlaceGraylog: https://marketplace.graylog.org/addons/1ad55d59-09a0-4dd4-9da6-2eccbbfbed1e
-
-ZabbixShare: https://share.zabbix.com/cat-app/monitoring-system/graylog-node-monitoring-using-zabbix
