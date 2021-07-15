@@ -48,10 +48,10 @@ We added a feature of Zabbix called LLD (Low Level Discovery) in the model, this
 # chmod +x GLOBAL_PROTECT.py
 ```
 
-2. Crie o token do palo alto (local) com senha e altere as variáveis ​​no arquivo monitoring-graylog.py:
+2. Crie o token do palo alto (local) com senha e altere as variáveis ​​no arquivo GLOBAL_PROTECT.py.py:
 
 ```bash
-cat monitoring-graylog.py
+cat GLOBAL_PROTECT.py
 url="<URL DO FIREWALL>"
 chave = "<Token de Acesso>"
 type = 'op'
