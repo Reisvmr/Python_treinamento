@@ -48,7 +48,7 @@ We added a feature of Zabbix called LLD (Low Level Discovery) in the model, this
 # chmod +x GLOBAL_PROTECT.py
 ```
 
-2. Crie o token do palo alto (local) com senha e altere as variáveis ​​no arquivo GLOBAL_PROTECT.py.py:
+2. Crie o token do palo alto (local) com senha e altere as variáveis ​​no arquivo GLOBAL_PROTECT.py:
 
 ```bash
 cat GLOBAL_PROTECT.py
@@ -71,7 +71,7 @@ def VPN_DISCOVERY_LOGOUT():
 3. Execute o script passando o parâmetro VPN_DISCOVERY_LOGOUT ou VPN_DISCOVERY_LOGON para verificar se está funcionando corretamente:
 
 ```bash
-# python3.4 monitoring-graylog.py VPN_DISCOVERY_LOGON
+# python3.4 GLOBAL_PROTECT.py VPN_DISCOVERY_LOGON
 {
             "{#DOMAIN}": "verruga",
             "{#USERNAME}": "zille",
